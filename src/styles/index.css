@@ -79,3 +79,78 @@ html.high-contrast h6 {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* Language-specific font sizes and adjustments */
+body.lang-en-IN {
+  font-size: 100%;
+  letter-spacing: 0;
+}
+
+body.lang-hi-IN {
+  font-size: 100%;
+  letter-spacing: 0;
+}
+
+body.lang-ta-IN {
+  font-size: 105%;
+  letter-spacing: 0.01em;
+}
+
+body.lang-te-IN {
+  font-size: 105%;
+  letter-spacing: 0.01em;
+}
+
+body.lang-mr-IN {
+  font-size: 100%;
+  letter-spacing: 0;
+}
+
+body.lang-gu-IN {
+  font-size: 102%;
+  letter-spacing: 0.01em;
+}
+
+body.lang-pa-IN {
+  font-size: 102%;
+  letter-spacing: 0.01em;
+}
+
+body.lang-kn-IN {
+  font-size: 105%;
+  letter-spacing: 0.01em;
+}
+
+/* Font family classes */
+.font-inter {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-devanagari {
+  font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-tamil {
+  font-family: 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-telugu {
+  font-family: 'Noto Sans Telugu', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-gujarati {
+  font-family: 'Noto Sans Gujarati', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-gurmukhi {
+  font-family: 'Noto Sans Gurmukhi', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.font-kannada {
+  font-family: 'Noto Sans Kannada', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Language transition animation */
+body {
+  transition: opacity 0.2s ease-in-out;
+}

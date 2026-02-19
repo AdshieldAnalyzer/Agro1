@@ -1,34 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
+import { useTranslation } from '../../../context/LanguageContext';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date()?.getFullYear();
 
   const footerLinks = {
     platform: [
-      { name: 'AI Rankings', path: '/ai-ranking-engine-methodology-showcase' },
-      { name: 'Crop Championship', path: '/crop-championship-center-interactive-rankings' },
-      { name: 'Treatment Rankings', path: '/treatment-rankings-fertilizer-pesticide-intelligence' },
-      { name: 'Success League', path: '/farmer-success-league-community-leaderboards' }
+      { name: t('footer.links.aiRankings'), path: '/ai-ranking-engine-methodology-showcase' },
+      { name: t('footer.links.cropChampionship'), path: '/crop-championship-center-interactive-rankings' },
+      { name: t('footer.links.treatmentRankings'), path: '/treatment-rankings-fertilizer-pesticide-intelligence' },
+      { name: t('footer.links.successLeague'), path: '/farmer-success-league-community-leaderboards' }
     ],
     resources: [
-      { name: 'Regional Intelligence', path: '/regional-intelligence-center-location-specific-insights' },
-      { name: 'Research Papers', path: '#' },
-      { name: 'Success Stories', path: '#' },
-      { name: 'API Documentation', path: '#' }
+      { name: t('footer.links.regionalIntelligence'), path: '/regional-intelligence-center-location-specific-insights' },
+      { name: t('footer.links.researchPapers'), path: '#' },
+      { name: t('footer.links.successStories'), path: '#' },
+      { name: t('footer.links.apiDocs'), path: '#' }
     ],
     support: [
-      { name: 'Help Center', path: '#' },
-      { name: 'Contact Us', path: '#' },
-      { name: 'Farmer Support', path: '#' },
-      { name: 'Technical Support', path: '#' }
+      { name: t('footer.links.helpCenter'), path: '#' },
+      { name: t('footer.links.contactUs'), path: '#' },
+      { name: t('footer.links.farmerSupport'), path: '#' },
+      { name: t('footer.links.techSupport'), path: '#' }
     ],
     company: [
-      { name: 'About Us', path: '#' },
-      { name: 'Careers', path: '#' },
-      { name: 'Press Kit', path: '#' },
-      { name: 'Partners', path: '#' }
+      { name: t('footer.links.about'), path: '#' },
+      { name: t('footer.links.careers'), path: '#' },
+      { name: t('footer.links.pressKit'), path: '#' },
+      { name: t('footer.links.partners'), path: '#' }
     ]
   };
 
@@ -84,7 +86,7 @@ const Footer = () => {
 
             {/* Description */}
             <p className="text-gray-300 leading-relaxed max-w-md">
-              India's most advanced AI platform for oilseed crop yield optimization. Transform farming uncertainty into confident decisions with data-driven rankings and oilseed-specific insights.
+              {t('footer.brand.tagline')}
             </p>
 
             {/* Contact Info */}
@@ -120,7 +122,7 @@ const Footer = () => {
 
           {/* Platform Links */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Platform</h3>
+            <h3 className="text-lg font-semibold text-white mb-6">{t('footer.platform.title')}</h3>
             <ul className="space-y-3">
               {footerLinks?.platform?.map((link) => (
                 <li key={link?.name}>
@@ -138,7 +140,7 @@ const Footer = () => {
 
           {/* Resources Links */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Resources</h3>
+            <h3 className="text-lg font-semibold text-white mb-6">{t('footer.resources.title')}</h3>
             <ul className="space-y-3">
               {footerLinks?.resources?.map((link) => (
                 <li key={link?.name}>
@@ -156,7 +158,7 @@ const Footer = () => {
 
           {/* Support & Company Links */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Support</h3>
+            <h3 className="text-lg font-semibold text-white mb-6">{t('footer.support.title')}</h3>
             <ul className="space-y-3 mb-8">
               {footerLinks?.support?.map((link) => (
                 <li key={link?.name}>
@@ -171,7 +173,7 @@ const Footer = () => {
               ))}
             </ul>
 
-            <h3 className="text-lg font-semibold text-white mb-6">Company</h3>
+            <h3 className="text-lg font-semibold text-white mb-6">{t('footer.company.title')}</h3>
             <ul className="space-y-3">
               {footerLinks?.company?.map((link) => (
                 <li key={link?.name}>
@@ -193,8 +195,8 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-xl font-bold text-white mb-2">Stay Updated with AI Agriculture Insights</h3>
-              <p className="text-gray-300">Get weekly ranking updates, success stories, and expert farming tips.</p>
+              <h3 className="text-xl font-bold text-white mb-2">{t('home.trending.title')}</h3>
+              <p className="text-gray-300">{t('home.trending.subtitle')}</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <input
@@ -215,7 +217,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-gray-400 text-sm">
-              <span>© {currentYear} AgroYield AI. All rights reserved. Empowering farmers with intelligent oilseed crop rankings.</span>
+              <span>{t('footer.copyright', { year: currentYear })}</span>
               <div className="flex items-center space-x-6">
                 <Link to="#" className="hover:text-primary transition-colors duration-200">Privacy Policy</Link>
                 <Link to="#" className="hover:text-primary transition-colors duration-200">Terms of Service</Link>
