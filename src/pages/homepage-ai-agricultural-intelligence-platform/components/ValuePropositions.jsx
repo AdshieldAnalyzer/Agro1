@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
+import { useTranslation } from '../../../context/LanguageContext';
 
 const ValuePropositions = () => {
+  const { t } = useTranslation();
+  
   const propositions = [
     {
       icon: "Brain",
-      title: "Netflix-Level AI for Farming",
-      description: "Sophisticated recommendation algorithms analyze millions of data points to suggest the perfect crops, treatments, and timing for your specific farm conditions.",
-      features: ["Machine Learning Models", "Real-time Data Processing", "Personalized Recommendations"],
+      title: t('home.value.prop1Title'),
+      description: t('home.value.prop1Desc'),
+      features: [t('home.value.prop1Feature1'), t('home.value.prop1Feature2'), t('home.value.prop1Feature3')],
       link: "/ai-ranking-engine-methodology-showcase",
       gradient: "from-blue-500 to-purple-600",
       bgColor: "bg-blue-50",
@@ -16,9 +19,9 @@ const ValuePropositions = () => {
     },
     {
       icon: "BarChart3",
-      title: "Data-Driven Crop Rankings",
-      description: "Every crop recommendation comes with transparent rankings based on yield potential, market prices, weather patterns, and soil compatibility for your region.",
-      features: ["Scientific Validation", "Regional Optimization", "Success Probability Scores"],
+      title: t('home.value.prop2Title'),
+      description: t('home.value.prop2Desc'),
+      features: [t('home.value.prop2Feature1'), t('home.value.prop2Feature2'), t('home.value.prop2Feature3')],
       link: "/crop-championship-center-interactive-rankings",
       gradient: "from-green-500 to-emerald-600",
       bgColor: "bg-green-50",
@@ -26,9 +29,9 @@ const ValuePropositions = () => {
     },
     {
       icon: "Trophy",
-      title: "Community Success Leaderboards",
-      description: "Join India's farming community where success is celebrated, knowledge is shared, and farmers compete to achieve the highest yields and profits.",
-      features: ["Peer Comparisons", "Achievement Badges", "Success Stories"],
+      title: t('home.value.prop3Title'),
+      description: t('home.value.prop3Desc'),
+      features: [t('home.value.prop3Feature1'), t('home.value.prop3Feature2'), t('home.value.prop3Feature3')],
       link: "/farmer-success-league-community-leaderboards",
       gradient: "from-amber-500 to-orange-600",
       bgColor: "bg-amber-50",
@@ -43,18 +46,18 @@ const ValuePropositions = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Sparkles" size={16} />
-            <span>Why Choose AgroYield AI</span>
+            <span>{t('home.value.badge')}</span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Transform Your Farming with
+            {t('home.value.heading1')}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Intelligent Rankings
+              {t('home.value.heading2')}
             </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Experience the power of AI-driven agricultural intelligence that turns complex farming decisions into simple, confident choices.
+            {t('home.value.subtitle2')}
           </p>
         </div>
 
@@ -100,7 +103,7 @@ const ValuePropositions = () => {
                   to={prop?.link}
                   className="inline-flex items-center space-x-2 text-primary font-semibold hover:text-primary/80 transition-colors duration-200 group/link"
                 >
-                  <span>Learn More</span>
+                  <span>{t('home.value.learnMore')}</span>
                   <Icon 
                     name="ArrowRight" 
                     size={16} 
@@ -115,19 +118,19 @@ const ValuePropositions = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Experience AI-Powered Farming?</h3>
+            <h3 className="text-2xl font-bold mb-4">{t('home.value.ctaHeading')}</h3>
             <p className="text-green-100 mb-6 max-w-2xl mx-auto">
-              Join thousands of farmers who have already transformed their operations with our intelligent ranking system.
+              {t('home.value.ctaSubtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center space-x-2">
                 <Icon name="Zap" size={20} />
-                <span>Start Free Assessment</span>
+                <span>{t('home.value.startFreeAssessment')}</span>
               </button>
               <Link to="/ai-ranking-engine-methodology-showcase">
                 <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 flex items-center justify-center space-x-2 w-full sm:w-auto">
                   <Icon name="Play" size={20} />
-                  <span>Watch Demo</span>
+                  <span>{t('home.value.watchDemo')}</span>
                 </button>
               </Link>
             </div>

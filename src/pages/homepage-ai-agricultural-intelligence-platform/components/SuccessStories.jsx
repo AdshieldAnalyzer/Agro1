@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
+import { useTranslation } from '../../../context/LanguageContext';
 
 const SuccessStories = () => {
+  const { t } = useTranslation();
   const [currentStory, setCurrentStory] = useState(0);
 
   const successStories = [
@@ -68,18 +70,18 @@ const SuccessStories = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Users" size={16} />
-            <span>Real Farmer Success Stories</span>
+            <span>{t('home.success.badge')}</span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Farmers Who Transformed
+            {t('home.success.heading1')}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Their Lives with AI
+              {t('home.success.heading2')}
             </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Real stories from real farmers who trusted our AI rankings and achieved remarkable results.
+            {t('home.success.subtitle')}
           </p>
         </div>
 
@@ -116,7 +118,7 @@ const SuccessStories = () => {
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
                 <div className="flex items-center space-x-2 mb-4">
                   <Icon name="Quote" size={20} className="text-primary" />
-                  <span className="font-semibold text-gray-900">Success Story</span>
+                  <span className="font-semibold text-gray-900">{t('home.success.successStory')}</span>
                 </div>
                 <p className="text-gray-700 leading-relaxed whitespace-pre-line">
                   {currentData?.story}
@@ -127,7 +129,7 @@ const SuccessStories = () => {
               <div>
                 <h4 className="font-semibold text-gray-900 mb-3 flex items-center space-x-2">
                   <Icon name="Trophy" size={18} className="text-primary" />
-                  <span>Key Achievements</span>
+                  <span>{t('home.success.keyAchievements')}</span>
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {currentData?.achievements?.map((achievement, index) => (
@@ -144,7 +146,7 @@ const SuccessStories = () => {
               {/* Crop Info */}
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
                 <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-xl font-bold text-gray-900">Crop Performance</h4>
+                  <h4 className="text-xl font-bold text-gray-900">{t('home.success.cropPerformance')}</h4>
                   <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
                     {currentData?.crop}
                   </div>
@@ -154,21 +156,21 @@ const SuccessStories = () => {
                 {/* Before/After Comparison */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="text-center">
-                    <div className="text-sm text-gray-600 mb-1">Before AI</div>
+                    <div className="text-sm text-gray-600 mb-1">{t('home.success.beforeAI')}</div>
                     <div className="text-2xl font-bold text-gray-400">{currentData?.beforeYield}</div>
-                    <div className="text-xs text-gray-500">per acre</div>
+                    <div className="text-xs text-gray-500">{t('home.success.perAcre')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-sm text-gray-600 mb-1">After AI</div>
+                    <div className="text-sm text-gray-600 mb-1">{t('home.success.afterAI')}</div>
                     <div className="text-2xl font-bold text-primary">{currentData?.afterYield}</div>
-                    <div className="text-xs text-gray-500">per acre</div>
+                    <div className="text-xs text-gray-500">{t('home.success.perAcre')}</div>
                   </div>
                 </div>
 
                 {/* Improvement Badge */}
                 <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl p-4 text-center">
                   <div className="text-3xl font-bold mb-1">+{currentData?.improvement}</div>
-                  <div className="text-sm opacity-90">Profit Improvement</div>
+                  <div className="text-sm opacity-90">{t('home.success.profitImprovement')}</div>
                 </div>
               </div>
 
@@ -179,7 +181,7 @@ const SuccessStories = () => {
                   className="flex items-center space-x-2 bg-white text-gray-600 px-4 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors duration-200"
                 >
                   <Icon name="ChevronLeft" size={20} />
-                  <span>Previous</span>
+                  <span>{t('home.success.previous')}</span>
                 </button>
 
                 <div className="flex space-x-2">
@@ -198,7 +200,7 @@ const SuccessStories = () => {
                   onClick={nextStory}
                   className="flex items-center space-x-2 bg-white text-gray-600 px-4 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors duration-200"
                 >
-                  <span>Next</span>
+                  <span>{t('home.success.next')}</span>
                   <Icon name="ChevronRight" size={20} />
                 </button>
               </div>
@@ -210,38 +212,38 @@ const SuccessStories = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-200">
             <div className="text-3xl font-bold text-primary mb-2">15,000+</div>
-            <div className="text-gray-600">Successful Farmers</div>
+            <div className="text-gray-600">{t('home.success.successfulFarmers')}</div>
           </div>
           <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-200">
             <div className="text-3xl font-bold text-primary mb-2">34%</div>
-            <div className="text-gray-600">Avg Yield Increase</div>
+            <div className="text-gray-600">{t('home.success.avgYieldIncrease')}</div>
           </div>
           <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-200">
             <div className="text-3xl font-bold text-primary mb-2">₹2.5Cr</div>
-            <div className="text-gray-600">Additional Income Generated</div>
+            <div className="text-gray-600">{t('home.success.additionalIncome')}</div>
           </div>
           <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-200">
             <div className="text-3xl font-bold text-primary mb-2">92%</div>
-            <div className="text-gray-600">Recommendation Accuracy</div>
+            <div className="text-gray-600">{t('home.success.recommendationAccuracy')}</div>
           </div>
         </div>
 
         {/* CTA Section */}
         <div className="text-center">
           <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Write Your Success Story?</h3>
+            <h3 className="text-2xl font-bold mb-4">{t('home.success.ctaHeading')}</h3>
             <p className="text-green-100 mb-6 max-w-2xl mx-auto">
-              Join thousands of farmers who have transformed their lives with AI-powered farming intelligence.
+              {t('home.success.ctaSubtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center space-x-2">
                 <Icon name="Zap" size={20} />
-                <span>Start Your Journey</span>
+                <span>{t('home.success.startJourney')}</span>
               </button>
               <Link to="/farmer-success-league-community-leaderboards">
                 <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 flex items-center justify-center space-x-2 w-full sm:w-auto">
                   <Icon name="Users" size={20} />
-                  <span>Join Success League</span>
+                  <span>{t('home.success.joinSuccessLeague')}</span>
                 </button>
               </Link>
             </div>
