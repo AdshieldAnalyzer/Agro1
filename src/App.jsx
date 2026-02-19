@@ -1,15 +1,16 @@
 import React from "react";
 import Routes from "./Routes";
-import VoiceAssistant from "./components/VoiceAssistant";
+import VoiceAssistantUI from "./components/VoiceAssistantUI";
 import { LanguageProvider } from "./context/LanguageContext";
+import { VoiceAccessibilityProvider } from "./context/VoiceAccessibilityContext";
 
 function App() {
   return (
     <LanguageProvider>
-      <>
+      <VoiceAccessibilityProvider>
         <Routes />
-        <VoiceAssistant />
-      </>
+        <VoiceAssistantUI />
+      </VoiceAccessibilityProvider>
     </LanguageProvider>
   );
 }
