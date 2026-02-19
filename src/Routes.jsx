@@ -9,13 +9,16 @@ import CropChampionshipCenter from './pages/crop-championship-center-interactive
 import AIRankingEngineMethodologyShowcase from './pages/ai-ranking-engine-methodology-showcase';
 import TreatmentRankingsPage from './pages/treatment-rankings-fertilizer-pesticide-intelligence';
 import RegionalIntelligenceCenter from './pages/regional-intelligence-center-location-specific-insights';
+import VoiceAssistantUI from "./components/VoiceAssistantUI";
+import { VoiceAccessibilityProvider } from "./context/VoiceAccessibilityContext";
 
 const Routes = () => {
   return (
     <BrowserRouter>
-      <ErrorBoundary>
-      <ScrollToTop />
-      <RouterRoutes>
+      <VoiceAccessibilityProvider>
+        <ErrorBoundary>
+          <ScrollToTop />
+          <RouterRoutes>
         {/* Define your route here */}
         <Route path="/" element={<AIRankingEngineMethodologyShowcase />} />
         <Route path="/farmer-success-league-community-leaderboards" element={<FarmerSuccessLeague />} />
@@ -25,8 +28,10 @@ const Routes = () => {
         <Route path="/treatment-rankings-fertilizer-pesticide-intelligence" element={<TreatmentRankingsPage />} />
         <Route path="/regional-intelligence-center-location-specific-insights" element={<RegionalIntelligenceCenter />} />
         <Route path="*" element={<NotFound />} />
-      </RouterRoutes>
-      </ErrorBoundary>
+          </RouterRoutes>
+          <VoiceAssistantUI />
+        </ErrorBoundary>
+      </VoiceAccessibilityProvider>
     </BrowserRouter>
   );
 };
