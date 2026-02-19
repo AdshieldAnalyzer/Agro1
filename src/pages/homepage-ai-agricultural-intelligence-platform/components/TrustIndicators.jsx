@@ -1,8 +1,11 @@
 import React from 'react';
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
+import { useTranslation } from '../../../context/LanguageContext';
 
 const TrustIndicators = () => {
+  const { t } = useTranslation();
+  
   const partnerships = [
     {
       name: "Indian Agricultural Research Institute",
@@ -102,24 +105,24 @@ const TrustIndicators = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Icon name="Shield" size={16} />
-            <span>Trusted by Experts & Institutions</span>
+            <span>{t('home.trust.badge')}</span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Scientific Validation &
+            {t('home.trust.heading1')}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Expert Endorsements
+              {t('home.trust.heading2')}
             </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our AI algorithms are validated by leading agricultural institutions and endorsed by renowned experts in the field.
+            {t('home.trust.subtitle')}
           </p>
         </div>
 
         {/* Partnerships */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Institutional Partnerships</h3>
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">{t('home.trust.institutionalPartnerships')}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {partnerships?.map((partner, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 text-center hover-lift transition-all duration-300">
@@ -142,7 +145,7 @@ const TrustIndicators = () => {
 
         {/* Expert Endorsements */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Expert Endorsements</h3>
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">{t('home.trust.expertEndorsements')}</h3>
           <div className="grid lg:grid-cols-3 gap-8">
             {expertEndorsements?.map((expert, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 hover-lift transition-all duration-300">
@@ -171,7 +174,7 @@ const TrustIndicators = () => {
 
         {/* Certifications */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Certifications & Recognition</h3>
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">{t('home.trust.certificationsRecognition')}</h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {certifications?.map((cert, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-200 hover-lift transition-all duration-300">
@@ -187,7 +190,7 @@ const TrustIndicators = () => {
 
         {/* Media Recognition */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Media Recognition</h3>
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">{t('home.trust.mediaRecognition')}</h3>
           <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
             <div className="grid lg:grid-cols-3 gap-6">
               {mediaRecognition?.map((media, index) => (
@@ -203,30 +206,30 @@ const TrustIndicators = () => {
 
         {/* Trust Metrics */}
         <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white text-center">
-          <h3 className="text-2xl font-bold mb-6">Trusted by the Agricultural Community</h3>
+          <h3 className="text-2xl font-bold mb-6">{t('home.trust.trustedByCommunity')}</h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <div>
               <div className="text-3xl font-bold mb-2">92%</div>
-              <div className="text-green-100 text-sm">Prediction Accuracy</div>
+              <div className="text-green-100 text-sm">{t('home.trust.predictionAccuracy')}</div>
             </div>
             <div>
               <div className="text-3xl font-bold mb-2">15,000+</div>
-              <div className="text-green-100 text-sm">Active Farmers</div>
+              <div className="text-green-100 text-sm">{t('home.trust.activePatients')}</div>
             </div>
             <div>
               <div className="text-3xl font-bold mb-2">50+</div>
-              <div className="text-green-100 text-sm">Research Papers</div>
+              <div className="text-green-100 text-sm">{t('home.trust.researchPapers')}</div>
             </div>
             <div>
               <div className="text-3xl font-bold mb-2">25+</div>
-              <div className="text-green-100 text-sm">Awards Won</div>
+              <div className="text-green-100 text-sm">{t('home.trust.awardsWon')}</div>
             </div>
           </div>
           
           <div className="mt-8">
             <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center space-x-2 mx-auto">
               <Icon name="FileText" size={20} />
-              <span>View Research Publications</span>
+              <span>{t('home.trust.viewResearch')}</span>
             </button>
           </div>
         </div>
