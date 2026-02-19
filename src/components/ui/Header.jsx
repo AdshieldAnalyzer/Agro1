@@ -3,30 +3,32 @@ import { Link, useLocation } from 'react-router-dom';
 import Icon from '../AppIcon';
 import Button from './Button';
 import LanguageSelector from '../LanguageSelector';
+import { useTranslation } from '../../context/LanguageContext';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const primaryNavItems = [
     {
-      name: 'Home',
+      name: t('nav.home'),
       path: '/homepage-ai-agricultural-intelligence-platform',
       icon: 'Home'
     },
     {
-      name: 'AI Rankings',
+      name: t('nav.aiRankings'),
       path: '/ai-ranking-engine-methodology-showcase',
       icon: 'TrendingUp'
     },
     {
-      name: 'Crop Championship',
+      name: t('nav.cropChampionship'),
       path: '/crop-championship-center-interactive-rankings',
       icon: 'Trophy'
     },
     {
-      name: 'Treatment Rankings',
+      name: t('nav.treatmentRankings'),
       path: '/treatment-rankings-fertilizer-pesticide-intelligence',
       icon: 'Beaker'
     }
@@ -34,12 +36,12 @@ const Header = () => {
 
   const secondaryNavItems = [
     {
-      name: 'Success League',
+      name: t('nav.successLeague'),
       path: '/farmer-success-league-community-leaderboards',
       icon: 'Users'
     },
     {
-      name: 'Regional Intelligence',
+      name: t('nav.regionalIntelligence'),
       path: '/regional-intelligence-center-location-specific-insights',
       icon: 'MapPin'
     }
@@ -164,7 +166,7 @@ const Header = () => {
               size="sm"
               className="text-gray-600 border-gray-300 hover:border-primary hover:text-primary"
             >
-              Sign In
+              {t('nav.selectLanguage')}
             </Button>
             <Button 
               variant="default" 
@@ -173,7 +175,7 @@ const Header = () => {
               iconPosition="left"
               className="bg-primary hover:bg-primary/90"
             >
-              Get Free Assessment
+              {t('home.hero_cta_primary')}
             </Button>
           </div>
 
@@ -211,7 +213,7 @@ const Header = () => {
                   fullWidth
                   className="justify-center text-gray-600 border-gray-300"
                 >
-                  Sign In
+                  {t('nav.selectLanguage')}
                 </Button>
                 <Button 
                   variant="default" 
@@ -220,7 +222,7 @@ const Header = () => {
                   iconPosition="left"
                   className="justify-center bg-primary hover:bg-primary/90"
                 >
-                  Get Free Assessment
+                  {t('home.hero_cta_primary')}
                 </Button>
               </div>
             </div>

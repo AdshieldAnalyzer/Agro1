@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import { useTranslation } from '../../../context/LanguageContext';
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   const [currentRanking, setCurrentRanking] = useState(0);
   const [animatedNumbers, setAnimatedNumbers] = useState({
     yieldIncrease: 0,
@@ -89,22 +91,22 @@ const HeroSection = () => {
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium border border-primary/20">
               <Icon name="Zap" size={16} />
-              <span>India's #1 AI Oilseed Yield Optimizer</span>
+              <span>{t('home.hero.badge')}</span>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Turn Farming
+                {t('home.hero.headline1')}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                  Uncertainty
+                  {t('home.hero.headline2')}
                 </span>
-                Into Confident
-                <span className="block text-primary">Decisions</span>
+                {t('home.hero.headline3')}
+                <span className="block text-primary">{t('home.hero.headline4')}</span>
               </h1>
               
               <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-                Data-driven oilseed crop rankings, treatment recommendations, and yield optimization — purpose-built for India's oilseed farmers.
+                {t('home.hero_subtitle')}
               </p>
             </div>
 
@@ -114,19 +116,19 @@ const HeroSection = () => {
                 <div className="text-3xl font-bold text-primary animate-number-count">
                   {animatedNumbers?.yieldIncrease}%
                 </div>
-                <div className="text-sm text-gray-600">Avg Yield Increase</div>
+                <div className="text-sm text-gray-600">{t('home.stats.yieldIncrease')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary animate-number-count">
                   {animatedNumbers?.farmers?.toLocaleString('en-IN')}+
                 </div>
-                <div className="text-sm text-gray-600">Farmers Trust Us</div>
+                <div className="text-sm text-gray-600">{t('home.stats.farmersTrust')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary animate-number-count">
                   {animatedNumbers?.accuracy}%
                 </div>
-                <div className="text-sm text-gray-600">Prediction Accuracy</div>
+                <div className="text-sm text-gray-600">{t('home.stats.predictionAccuracy')}</div>
               </div>
             </div>
 
@@ -139,7 +141,7 @@ const HeroSection = () => {
                 iconPosition="left"
                 className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold"
               >
-                Get Free Farm Assessment
+                {t('home.hero_cta_primary')}
               </Button>
               
               <Link to="/ai-ranking-engine-methodology-showcase">
@@ -150,7 +152,7 @@ const HeroSection = () => {
                   iconPosition="left"
                   className="border-primary text-primary hover:bg-primary/5 px-8 py-4 text-lg font-semibold w-full sm:w-auto"
                 >
-                  See How AI Works
+                  {t('home.hero_cta_secondary')}
                 </Button>
               </Link>
             </div>
@@ -159,11 +161,11 @@ const HeroSection = () => {
             <div className="flex items-center space-x-6 pt-4">
               <div className="flex items-center space-x-2 text-sm text-gray-600">
                 <Icon name="Shield" size={16} className="text-primary" />
-                <span>Government Approved</span>
+                <span>{t('common.governmentApproved')}</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-600">
                 <Icon name="Award" size={16} className="text-primary" />
-                <span>University Validated</span>
+                <span>{t('common.universityValidated')}</span>
               </div>
             </div>
           </div>
@@ -175,12 +177,12 @@ const HeroSection = () => {
               <div className="bg-gradient-to-r from-primary to-secondary p-6 text-white">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-xl font-bold">Live Rankings</h3>
-                    <p className="text-green-100 text-sm">Updated every 15 minutes</p>
+                    <h3 className="text-xl font-bold">{t('home.liveRankings.title')}</h3>
+                    <p className="text-green-100 text-sm">{t('home.liveRankings.subtitle')}</p>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></div>
-                    <span className="text-sm">Live</span>
+                    <span className="text-sm">{t('common.live')}</span>
                   </div>
                 </div>
               </div>
@@ -194,8 +196,8 @@ const HeroSection = () => {
                         <Icon name="Trophy" size={24} className="text-white" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-900">#{currentRanking + 1} Recommended</h4>
-                        <p className="text-sm text-gray-600">{currentData?.region} Region</p>
+                        <h4 className="font-bold text-gray-900">#{currentRanking + 1} {t('home.liveRankings.recommended')}</h4>
+                        <p className="text-sm text-gray-600">{currentData?.region} {t('common.region')}</p>
                       </div>
                     </div>
                     <div className="text-right">
@@ -206,7 +208,7 @@ const HeroSection = () => {
                           className="text-primary" 
                         />
                         <span className="text-sm font-medium text-primary">
-                          {currentData?.confidence}% Confidence
+                          {currentData?.confidence}% {t('common.confidence')}
                         </span>
                       </div>
                     </div>
@@ -226,7 +228,7 @@ const HeroSection = () => {
                     </div>
                     
                     <div className="flex justify-between text-sm text-gray-600">
-                      <span>Success Probability</span>
+                      <span>{t('common.confidence')}</span>
                       <span>{currentData?.confidence}%</span>
                     </div>
                   </div>
@@ -242,7 +244,7 @@ const HeroSection = () => {
                       iconPosition="left"
                       className="w-full justify-center text-primary border-primary/30 hover:bg-primary/5"
                     >
-                      View Rankings
+                      {t('home.liveRankings.viewRankings')}
                     </Button>
                   </Link>
                   <Link to="/treatment-rankings-fertilizer-pesticide-intelligence">
@@ -253,7 +255,7 @@ const HeroSection = () => {
                       iconPosition="left"
                       className="w-full justify-center text-primary border-primary/30 hover:bg-primary/5"
                     >
-                      Treatments
+                      {t('home.liveRankings.treatments')}
                     </Button>
                   </Link>
                 </div>
@@ -263,12 +265,12 @@ const HeroSection = () => {
             {/* Floating Elements */}
             <div className="absolute -top-4 -right-4 bg-accent text-gray-800 px-4 py-2 rounded-full text-sm font-medium shadow-lg">
               <Icon name="Zap" size={16} className="inline mr-1" />
-              AI Powered
+              {t('common.aiPowered')}
             </div>
             
             <div className="absolute -bottom-4 -left-4 bg-white px-4 py-2 rounded-full text-sm font-medium shadow-lg border border-gray-200">
               <Icon name="Users" size={16} className="inline mr-1 text-primary" />
-              15,000+ Farmers
+              15,000+ {t('home.stats.farmersTrust')}
             </div>
           </div>
         </div>
