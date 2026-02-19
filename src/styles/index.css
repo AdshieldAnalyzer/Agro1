@@ -10,3 +10,72 @@ body {
   font-family: inherit;
   margin: unset;
 }
+
+/* Voice Accessibility - Text Sizing */
+body.text-lg {
+  font-size: 1.125rem;
+}
+
+body.text-normal {
+  font-size: 1rem;
+}
+
+body.text-small {
+  font-size: 0.875rem;
+}
+
+/* Voice Accessibility - High Contrast Mode */
+html.high-contrast {
+  --text-foreground: #000000;
+  --bg-background: #ffffff;
+  --border-color: #000000;
+}
+
+html.high-contrast body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+html.high-contrast a {
+  color: #0000ee;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+html.high-contrast button {
+  border: 2px solid #000000;
+  font-weight: bold;
+}
+
+html.high-contrast input,
+html.high-contrast textarea,
+html.high-contrast select {
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+html.high-contrast h1,
+html.high-contrast h2,
+html.high-contrast h3,
+html.high-contrast h4,
+html.high-contrast h5,
+html.high-contrast h6 {
+  color: #000000;
+  font-weight: bold;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 0.5rem;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
